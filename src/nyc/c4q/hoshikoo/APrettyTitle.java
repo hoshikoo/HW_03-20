@@ -4,39 +4,32 @@ package nyc.c4q.hoshikoo;
  * Created by Hoshiko on 3/16/15.
  */
 
-import java.lang.String;
+
 public class aPrettyTitle {
     public static void main(String[] args) {
-        printTitle("hello hoshiko oki", '*');
+
+        printTitle("this is a pen", '*');
+
     }
 
-    public static void printTitle(String text, char c){
-        System.out.println(text);
+    public static void printTitle(String text, char a){
 
-        System.out.print(text.substring(0, 1).toUpperCase());
-        System.out.println(text.substring(1));
-        //System.out.println();
+        String[] words = text.split(" ");
+        for(int i=0; i<words.length; i++){
+
+            System.out.print(words[i].substring(0, 1).toUpperCase());
+            System.out.print(words[i].substring(1)+" ");
+        }
+
+        System.out.println();
         for (int i = 0; i <text.length() ; i++) {
 
             if(text.charAt(i)== ' ') {
                 System.out.print(' ');
             } else{
-                System.out.print(c);
+                System.out.print(a);
             }
         }
 
-        // for (int i = 0; i <text.length() ; i++) {
-        //String[] out = text.split(" ");
-
-        //if (text.charAt(i) == ' ') {
-
-
-        //} else {
-        //   System.out.print(text.charAt(i));
-        //}
-
     }
-
-
-
 }
