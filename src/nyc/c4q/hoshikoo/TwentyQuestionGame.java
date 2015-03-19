@@ -11,7 +11,7 @@ public class TwentyQuestionGame {
 
         int randomNumber = new Random().nextInt(100000);
 
-        System.out.println(randomNumber);
+        //System.out.println(randomNumber);
         //System.out.println("Please guess a number between 1 and 100,000");
 
         int userNumber;
