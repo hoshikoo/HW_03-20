@@ -2,6 +2,8 @@ package nyc.c4q.hoshikoo;
 
 import java.util.Scanner;
 import java.util.Random;
+import java.util.InputMismatchException;
+
 public class TwentyQuestionGame {
 
     public static void main(String[] args) {
@@ -16,10 +18,18 @@ public class TwentyQuestionGame {
 
         for (int i = 0; i<20;i++) {
             System.out.println("Please guess a number between 1 and 100,000");
-            userNumber = input.nextInt();
+            //userNumber = input.nextInt();
             //System.out.println("countint: "+(i+1));
 
-            if(userNumber>100000 ||userNumber<0){ //how to add if it was not a number...catch??
+            try {
+                userNumber = input.nextInt();
+            }
+            catch (InputMismatchException e) {
+                userNumber = 0;
+                input.next();
+            }
+
+            if(userNumber>100000 ||userNumber<=0){ //how to add if it was not a number...catch??
                 System.out.println("You input wrong number");
                 i--;
             }
